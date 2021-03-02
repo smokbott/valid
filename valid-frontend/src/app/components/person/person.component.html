@@ -1,0 +1,46 @@
+<br>
+<form [formGroup]="formPerson" (ngSubmit)="onSavePerson()">
+    <div class="row mb-3">
+        <div class="row mb-3">
+            <label for="inputName" class="col-form-label">Nombre</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="inputName" name="inputName" formControlName="name"
+                    maxlength="20">
+            </div>
+            <label for="inputLastname" class="col-form-label">Apellido</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="inputLastname" name="inputLastname"
+                    formControlName="lastname" maxlength="20">
+            </div>
+            <button type="submit" class="btn btn-primary">Registrar</button>
+        </div>
+    </div>
+</form>
+
+<div>
+    <button (click)="onFindPersons()" class="btn btn-success">Consultar</button>
+    <button (click)="onSavePersons()" class="btn btn-warning">Guardar</button>
+</div>
+<br>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Procesado?</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let person of persons; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ person.name }}</td>
+            <td>{{ person.lastname }}</td>
+            <td>
+                <div class="form-check">
+                    <input type="checkbox" style="cursor: pointer;" [ngModel]="person.processed" (change)="onChangePerson($event, person.id)">
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

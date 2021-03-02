@@ -1,0 +1,1 @@
+mvn sonar:sonar -Dsonar.projectKey=co.com.valid:valid-service -Dsonar.host.url=http://localhost:9000 -Dsonar.login=c512ab8e0c76af078effa556a3df32ccf1f88ac8
