@@ -78,6 +78,7 @@ export class PersonComponent implements OnInit {
     if (personsIds.length == 0) return alert("no hay personas por procesar");
     this.personServ.edited(personsIds).subscribe(
       (res) => {
+		this.processPersons = {};  
         window.alert(`Se procesaron ${res} persona(s)`);
       },
       (err) => { window.alert(err); }
