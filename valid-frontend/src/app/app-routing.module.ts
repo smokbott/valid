@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PersonComponent } from './components/person/person.component';
 
 const routes: Routes = [{ path: "", redirectTo: "/valid/persons", pathMatch: "full" },
-{path: "valid/persons", component: PersonComponent }];
+{path: "/valid/persons", component: PersonComponent }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
