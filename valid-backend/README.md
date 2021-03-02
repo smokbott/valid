@@ -1,14 +1,22 @@
 ## Valid Backend
+
 Servicio REST para administrar personas
 construido con: java 8, spring, h2 database, hibernate, maven, sonar, swagger, junit. 
 
-## Instalación
-Pre requisitos: maven, java
+### Pre-requisitos 📋
 
+```
+- java
+- maven
+```
+### Instalación 🔧
+
+```
 1. Descargar repositorio
 2. abrir terminal cmd en la carpeta del proyecto
 3. ejecutar el comando: mvn spring-boot:run
 4. verificar que el servicio se este ejecutando en: http://localhost:8989/valid/persons
+```
 
 ## Consultar personas
 
