@@ -67,7 +67,8 @@ export class PersonComponent implements OnInit {
       const value = this.processPersons[key];
       const id = parseInt(key);
       const processed = this.persons.find(x => x.id == id)?.processed;
-      if (processed == !undefined && processed != value) {
+      if (processed !== undefined && processed != value) {
+        console.log("process person", id)
         const person = new PersonIdProcess();
         person.id = id;
         person.processed = value;
@@ -77,7 +78,7 @@ export class PersonComponent implements OnInit {
     if (personsIds.length == 0) return alert("no hay personas por procesar");
     this.personServ.edited(personsIds).subscribe(
       (res) => {
-        window.alert("se actualizaron: " + res);
+        window.alert(`Se procesaron ${res} persona(s)`);
       },
       (err) => { window.alert(err); }
     )
