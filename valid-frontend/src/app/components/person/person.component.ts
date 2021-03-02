@@ -56,7 +56,7 @@ export class PersonComponent implements OnInit {
         this.persons = res;
       },
       (err) => {
-        window.alert(err);
+        //window.alert(err);
       }
     )
   }
